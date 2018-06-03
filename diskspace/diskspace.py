@@ -7,6 +7,7 @@ import argparse
 import os
 import subprocess
 import re
+from contracts import contract
 
 
 # ==== Arguments ====
@@ -35,8 +36,11 @@ args = parser.parse_args()
 
 
 # ==== Disk Space ====
-
+@contract
 def subprocess_check_output(command):
+    """ Function description
+        :type command: string
+    """
     return subprocess.check_output(command.strip().split(' '))
 
 
