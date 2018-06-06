@@ -36,14 +36,14 @@ args = parser.parse_args()
 
 
 # ==== Disk Space ====
-@contract
+@contract(command='string', returns='string')
 def subprocess_check_output(command):
     """ Function description
         :type command: string
     """
     return subprocess.check_output(command.strip().split(' '))
 
-
+@contract(blocks = 'int')
 def bytes_to_readable(blocks):
     byts = blocks * 512
     readable_bytes = byts
